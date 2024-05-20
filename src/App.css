@@ -8,8 +8,8 @@ main{
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  background: linear-gradient(to bottom right, rgb(157, 208, 255), rgb(76, 76, 255));
 }
 
 .container{
@@ -19,15 +19,28 @@ main{
   display: flex;
   flex-direction: column;
 }
+
 input{
   width: 200px;
   margin-top: 20px;
-  
+  padding: 5px;
+  position: relative;
 }
+.input::before{
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  z-index: 2;
+  background-image: url(images/_ionicons_svg_md-search.svg);
+}
+
 .input{
+  display: flex;
+  justify-content: end;
   align-items: end;
-  margin-left: auto;
-  margin-right: auto;
+  /*margin-left: auto;
+  margin-right: auto;*/
 }
 
 table{
@@ -45,13 +58,16 @@ th,td {
   text-align: left;*/
   padding: 6px;
   border: 1px solid #ccc;
+  background-color: white;
   /*width: 100px*/
 }
 
 .list{
   border: 1px solid black;
   max-width: 200px;
-  margin: auto
+  margin-left: auto;
+  background-color: white;
+  padding: 5px;
 }
 
 ul{
@@ -74,6 +90,7 @@ ul{
   padding: 10px;
   background-color: rgb(209, 255, 255);  
   border: 1px solid rgb(0, 0, 109);
+  border-radius: 5px;
 }
 
 .toggle:focus{
