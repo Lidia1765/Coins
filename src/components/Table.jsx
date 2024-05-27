@@ -1,74 +1,46 @@
 
 import "../App.css";
+import { transformeObj } from '../helpers'
 
 export function Table({ data, onMore }) {
   const unwraped = (array) => {
-    return array.map(value => Object.entries(value))
+    return array.map(value => Object.entries(transformeObj(value)))
   }
-  let arrayWithNan = [];
-  const array = [];
-  let resultArray = [];
-  //console.log(unwraped(data))
-  //const chechArray = unwraped(data).map
-  const checkArray = unwraped(data).map(a => {
-    for (let i = 0; i < a.length; i++) {
-      for (let y = 0; y < a[i].length; y++) {
-        array.push(a[i][y])
-        arrayWithNan.push(+a[i][y])
-        //       console.log(a[i][y])
-        //       if (/^[0-9]*[.,]?[0-9]+$/.test(a[i][y])) {
-        //         array.push(Number(a[i][y]))
-        //       } else {
-        //         array.push(a[i][y])
-        //       }
+
+  function addSpace(string) {
+    let b = string.split('');
+    for (let i = 0; i < b.length; i++) {
+      if (b[i] === b[i].toUpperCase()) {
+        b.splice(i, 1, ' ' + b[i]);
       }
     }
-  })
-  arrayWithNan = arrayWithNan.map(a => Math.round(a))
-
-  //console.log(arrayWithNan)
-
-  function replaceArray(arrayWithNan, array) {
-    return arrayWithNan.map((item, i) => isNaN(item) ? array[i] : item)
+    return b.join('');
   }
-  console.log(replaceArray(arrayWithNan, array))
-  const result = replaceArray(arrayWithNan, array).map((item, i) => {
-    if (i % 2 !== 0) {
-      resultArray.push(item)
-    }
-  })
-  console.log(resultArray, 'result')
-
 
   return (
     <div>
       <table>
         <thead>
           <tr>
+
             {Object.keys(data[0]).map(keys => <th key={keys}>{keys}</th>)}
           </tr>
         </thead>
 
         <tbody>
-          {resultArray.map((item, i) => (
-            <tr>
-              <td key={i}>{item}</td>
-            </tr>
-          ))}
-          {/* {unwraped(data).map((item, idx) => (
+          {unwraped(data).map((item, idx) => (
             <tr key={idx}>
-              {item.map((value, i) => <td key={i}>{value}</td>)}
-              {/* {item.map(([_, value], i) => <td key={i} >{value}</td>)} }
+              {item.map(([_, value], i) => <td key={i} ><a href={value}>{value}</a></td>)}
 
-            </tr>}
-          ))*/}
+            </tr>))}
         </tbody>
       </table>
-      <button
-        className="view-more"
-        onClick={onMore}>
-        View more
-      </button>
+      {(data.length > 1) &&
+        <button
+          className="view-more"
+          onClick={onMore}>
+          View more
+        </button>}
     </div>
   )
 }

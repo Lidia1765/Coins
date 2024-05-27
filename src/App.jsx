@@ -76,7 +76,15 @@ export default function App() {
     document.location.reload()
   }
 
-  console.log(childData)
+  const newDataObj = (data) => {
+    helper(data)
+  }
+
+  const clear = () => {
+    dataTableCoins();
+    dataTableExc()
+  }
+
   return (
     <main>
       <div className="container">
@@ -94,7 +102,7 @@ export default function App() {
           <button className="toggle" onClick={() => handleTableChange('coins')}>Coins</button>
           <button className="toggle" onClick={() => handleTableChange('exchanges')}>Exchanges</button>
         </div> :
-          <button className="toggle width" onClick={onMore}
+          <button className="toggle width" onClick={clear}
           >Clear</button>}
 
         {error && (
