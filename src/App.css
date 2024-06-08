@@ -69,10 +69,13 @@ a{
 
 .list{
   border: 1px solid black;
-  max-width: 200px;
+  width: 200px;
   margin-left: auto;
   background-color: white;
   padding: 5px;
+  position: absolute;
+  left: 71%;
+  top: 48px;
 }
 
 ul{
@@ -106,4 +109,3 @@ ul{
 .width{
   width: 150px;
 }
-

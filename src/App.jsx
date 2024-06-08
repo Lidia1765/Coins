@@ -4,6 +4,7 @@ import { Search } from "./components/Search.jsx";
 import { api } from "./api";
 import { Dropdown } from "./components/Dropdown.jsx";
 import { Table } from "./components/Table.jsx";
+import { CurrentTable } from "./components/CurrentTable.jsx";
 
 export default function App() {
   const [search, setSearch] = useState("");

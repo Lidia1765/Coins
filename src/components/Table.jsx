@@ -1,6 +1,7 @@
 
 import "../App.css";
 import { transformeObj } from '../helpers'
+import { Link } from "react-router-dom";
 
 export function Table({ data, onMore }) {
   const unwraped = (array) => {
@@ -17,12 +18,27 @@ export function Table({ data, onMore }) {
     return b.join('');
   }
 
+  function getLink(value, field) {
+    if (typeof value === 'string' && value.includes('https://')) {
+      return <a href={value}>{value}</a>
+    }
+
+    if (field === 'id') {
+      return <Link to={`/coin/${value}`}>{value}</Link>
+    }
+
+    if (field === 'exchangeId') {
+      return <Link to={`/ex/${value}`}>{value}</Link>
+    }
+
+    return value
+  }
+
   return (
     <div>
       <table>
         <thead>
           <tr>
-
             {Object.keys(data[0]).map(keys => <th key={keys}>{keys}</th>)}
           </tr>
         </thead>
@@ -30,7 +46,7 @@ export function Table({ data, onMore }) {
         <tbody>
           {unwraped(data).map((item, idx) => (
             <tr key={idx}>
-              {item.map(([_, value], i) => <td key={i} ><a href={value}>{value}</a></td>)}
+              {item.map(([field, value], i) => <td key={i} >{getLink(value, field)}</td>)}
 
             </tr>))}
         </tbody>
