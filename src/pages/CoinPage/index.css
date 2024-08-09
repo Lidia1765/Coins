@@ -1,0 +1,34 @@
+.rank-coin{
+    background-color: rgb(2,86, 105);
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding: 0 10px 0 10px;
+    width: auto;
+    height: 100px;
+    color: white;
+    position: 54;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 15px -3px;
+
+}
+.rank-coin::before{
+    content: "";
+    width: calc(5% + 20px);
+    height: 15px;
+    background: inherit;
+    position: absolute;
+    border-radius: 8px;
+    left: calc(5% + 20px);
+    top: 0;
+}
+
+.second-info-block{
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    margin-top: 50px;
+}
+
+.properties{
+    display: flex;
+    gap: 30px;
+}

@@ -39,14 +39,14 @@ export function Table({ data, onMore }) {
       <table>
         <thead>
           <tr>
-            {Object.keys(data[0]).map(keys => <th key={keys}>{keys}</th>)}
+            {Object.keys(data[0]).map(keys => <th key={keys}><a>{keys}</a></th>)}
           </tr>
         </thead>
 
         <tbody>
           {unwraped(data).map((item, idx) => (
             <tr key={idx}>
-              {item.map(([field, value], i) => <td key={i} >{getLink(value, field)}</td>)}
+              {item.map(([field, value], i) => <td key={i} ><a href="ex/">{getLink(value, field)} </a></td>)}
 
             </tr>))}
         </tbody>

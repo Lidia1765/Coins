@@ -99,7 +99,7 @@ export default function App() {
           />
         )}
 
-        {((coins.length > 1) && exchanges.length > 1) ? <div>
+        {((coins.length > 1) && exchanges.length > 1) ? <div className="buttons">
           <button className="toggle" onClick={() => handleTableChange('coins')}>Coins</button>
           <button className="toggle" onClick={() => handleTableChange('exchanges')}>Exchanges</button>
         </div> :

@@ -2,7 +2,7 @@ import App from '../App'
 import { createBrowserRouter, useParams } from "react-router-dom";
 import { CoinPage } from '../pages/CoinPage';
 import { ExPage } from '../pages/Expage';
-
+import { Table } from '../components/Table';
 
 export const router = createBrowserRouter([
     {

@@ -9,7 +9,7 @@ main{
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(to bottom right, rgb(157, 208, 255), rgb(76, 76, 255));
+  background: linear-gradient(to bottom right, rgb(25, 255, 178), rgb(0, 204, 204));
 }
 
 .container{
@@ -17,6 +17,9 @@ main{
   height: auto;
   display: flex;
   flex-direction: column;
+  margin-bottom: 50px;
+  /* margin-left: auto;
+  margin-right: auto; */
 }
 
 input{
@@ -38,6 +41,7 @@ input{
   display: flex;
   justify-content: end;
   align-items: end;
+  max-width: 930px;
   /*margin-left: auto;
   margin-right: auto;*/
 }
@@ -59,7 +63,7 @@ th,td {
   border: 1px solid #ccc;
   background-color: white;
   text-decoration: none;
-  /*width: 100px*/
+  font-size: 90%;
 }
 
 a{
@@ -88,22 +92,28 @@ ul{
   border-radius: 30px;
   padding: 15px;
   margin: auto;
-  background-color: rgb(209, 255, 255);
+  background-color:  rgb(2,86, 105);
   border: 1px solid rgb(0, 0, 109);
   display: flex;
+  margin-top: 15px;
 }
-
+.buttons{
+  max-width: 800px;
+  margin-left: 10%;
+}
 .toggle{
   margin-top: 30px;
   padding: 10px;
-  background-color: rgb(209, 255, 255);  
+  background-color: rgb(2,86, 105);  
   border: 1px solid rgb(0, 0, 109);
   border-radius: 5px;
+  margin: 3px;
+  cursor: pointer;
 }
 
 .toggle:focus{
-  background-color: blue;
-  color: white;
+  background-color:  rgb(141,227, 203);
+  color: black;
 }
 
 .width{
